@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "pozgo/centos7"
+  config.vm.box = "liatrio/centos7chefjava"
 
    config.vm.network "forwarded_port", guest: 9000, host: 19000
 
@@ -17,6 +17,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision "chef_solo" do |chef|
     chef.add_recipe "sonarqube-liatrio"
+    chef.add_recipe "minitest-handler"
     chef.json = {
       "java" => {
         "jdk_version" => "8",
