@@ -4,6 +4,5 @@
 #
 #
 
-include_recipe "java"
-include_recipe "sonarqube"
-
+include_recipe 'java'
+include_recipe 'sonarqube'
