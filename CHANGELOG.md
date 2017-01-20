@@ -1,7 +1,15 @@
 sonarqube-liatrio CHANGELOG
 =========================
-
 This file is used to list changes made in each version of the sonarqube-liatrio cookbook.
+
+0.3.4 - 1.20.2017
+-----
+LTA-210: Prepping for Pipeline  
+Author: Justin Bankes - justin@liatrio.com
+- Specified running the default recipe.
+- Added rubocop settings to repo.
+- Moved chefignore to .chefignore
+- Added Source and Issues links to metadata per foodcritic's request.
 
 0.3.0 - 11.19.2016
 -----

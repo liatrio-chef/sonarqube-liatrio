@@ -4,5 +4,5 @@
 #
 #
 
-include_recipe 'java'
-include_recipe 'sonarqube'
+include_recipe 'java::default'
+include_recipe 'sonarqube::default'
