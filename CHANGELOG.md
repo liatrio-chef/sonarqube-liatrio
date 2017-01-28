@@ -2,6 +2,14 @@ sonarqube-liatrio CHANGELOG
 =========================
 This file is used to list changes made in each version of the sonarqube-liatrio cookbook.
 
+0.3.5 - 1.28.2017
+-----
+LTA-233: Packer Templates  
+Author: Justin Bankes - justin@liatrio.com
+Author: Matt Dias - mattd@liatrio.com
+- Added spec file existence tests
+- Added packer.json file with environment variable features
+
 0.3.4 - 1.20.2017
 -----
 LTA-210: Prepping for Pipeline  
