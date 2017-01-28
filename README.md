@@ -30,4 +30,8 @@ Just include `sonarqube-liatrio` in your node's `run_list`:
 
 License and Authors
 -------------------
-Authors: drew@liatrio.com
+Authors:
+* drew@liatrio.com
+* eddieb@liatrio.com
+* justin@liatrio.com
+* mattd@liatrio.com

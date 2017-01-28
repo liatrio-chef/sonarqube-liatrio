@@ -1,0 +1,49 @@
+{
+  "variables": {
+    "docker_password": "{{env `MY_DOCKER_SECRET`}}"
+  },
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "echo '' >/usr/sbin/swapon # Hack to stub swapfile creation",
+        "yum update -y && yum install -y sudo curl initscripts"
+      ]
+    },
+    {
+      "type": "chef-solo",
+      "cookbook_paths": ["cookbooks"],
+      "run_list": [
+        "sonarqube-liatrio::default"
+      ],
+      "json": {
+        "java": {
+          "jdk_version": 8
+        }
+      }
+    }
+  ],
+  "builders": [
+    {
+      "type": "docker",
+      "image": "centos/systemd",
+      "commit": true
+    }
+  ],
+	"post-processors": [
+    [
+      {
+        "type": "docker-tag",
+        "repository": "jbankes/sonarqube-liatrio",
+        "tag": "latest"
+      },
+			{
+				"type": "docker-push",
+        "login": true,
+        "login_username": "jbankes",
+        "login_password": "{{user `docker_password`}}",
+        "login_email": "justin@liatrio.com"
+      }
+    ]
+  ]
+}
