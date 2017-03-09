@@ -10,7 +10,6 @@ pipeline {
       sh 'echo "Updating Berkshelf: "'
       sh 'if [ ! -f Berksfile.lock ]; then berks install; else berks update; fi;'
     }
-
     stage('Acceptance Testing') {
       steps {
         parallel (
@@ -24,7 +23,6 @@ pipeline {
             sh 'echo "Starting foodcritic: "'
             sh 'foodcritic .'
           },
-
           ChefSpec: {
             sh 'echo Starting ChefSpec: '
             sh 'chef exec rspec'
@@ -32,8 +30,8 @@ pipeline {
         )
       }
     }
-
     stage('Test Kitchen') {
       sh 'if [ ! -f Berksfile.lock ]; then berks install; else berks update; fi; kitchen test -d always --color'
     }
   }
+} 
