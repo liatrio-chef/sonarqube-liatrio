@@ -3,7 +3,7 @@ pipeline {
 
   stages {
     stage('Setup') {
-      sh 'echo "Versions: "''
+      sh 'echo "Versions: "'
       sh 'chef --version'
       sh 'rubocop --version'
       sh 'foodcritic --version'
