@@ -15,12 +15,10 @@ pipeline {
     stage('Acceptance Testing') {
       steps {
         parallel (
-
           rubocop: {
             sh 'echo "Starting chefstyle (rubocop): "'
             sh 'rubocop --color'
           },
-
           foodcritic: {
             sh 'echo "Starting foodcritic: "'
             sh 'foodcritic .'
