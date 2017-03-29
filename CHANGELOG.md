@@ -2,6 +2,13 @@ sonarqube-liatrio CHANGELOG
 =========================
 This file is used to list changes made in each version of the sonarqube-liatrio cookbook.
 
+0.3.6 - 3.29.2017
+-----
+LTA-266: Sonar Security
+Author: Justin Bankes - justin@liatrio.com
+- Added security spec file
+- Added security recipe
+
 0.3.5 - 1.28.2017
 -----
 LTA-233: Packer Templates  
