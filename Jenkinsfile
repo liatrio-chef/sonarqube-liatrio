@@ -35,5 +35,13 @@ pipeline {
         sh 'if [ ! -f Berksfile.lock ]; then berks install; else berks update; fi; kitchen test -d always --color'
       }
     }
+  } 
+  post {
+    success {
+      echo "Knife upload here"
+    }
+    failure {
+      echo "The build failed"
+    }
   }
 }
